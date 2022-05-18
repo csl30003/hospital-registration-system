@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>患者登录</title>
+
+		<link rel="stylesheet" type="text/css" href="/static/css/patientlogin.css" />
+	</head>
+	<body>
+		{% load static %}
+		<div class="logo_box">
+			<img class="logo_img" src="/static/images/patient.png" />
+		</div>
+		<div>
+			<form class="login_box" method="POST" action="/patientlogin/">
+				<h1 class="title">欢迎登录</h1>
+                {% csrf_token %}
+				<input class="input_box" type="text" name="phone" placeholder="电话" />
+				<input class="input_box" type="password" name="password" placeholder="密码" />
+				<input class="button_box" type="submit" value="登录" />
+				<a href="/patientregister/">
+					<input class="button_box" type="button" value="注册" />
+				</a>
+			</form>
+		</div>
+	</body>
+</html>

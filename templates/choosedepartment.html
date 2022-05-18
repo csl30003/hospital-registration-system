@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>选择科室</title>
+		<link rel="stylesheet" type="text/css" href="/static/css/choosedepartment.css" />
+		<script src="/static/js/choosedepartment.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="box">
+			<div class="tap">
+				<!-- 头部 -->
+			</div>
+			<div class="content">
+				<dl class="fenlei">
+					{% for key in all_department_list.keys %}
+					<dd>
+						{{ key }}
+						<!--<img src="/static/images/right.png" />-->
+					</dd>
+					{% endfor %}
+				</dl>
+
+				<div class="subject">
+					<p>科室:</p>
+					{% for value in all_department_list.values %}
+					<dl class="dll">
+
+						<dt style="display: none;">
+							{% for v in value %}
+							<a href="/choosedoctorandtime/{{ v.id }}">{{ v.name }}</a>
+							{% endfor %}
+						</dt>
+
+					</dl>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>陆丰市人民医院挂号网</title>
+
+		<link rel="stylesheet" type="text/css" href="/static/css/chooselogin.css" />
+	</head>
+
+	<body>
+		{% load static %}
+
+		<div class="PageFont">
+			<h1 class="PageFontH1">陆丰市人民医院挂号</h1>
+		</div>
+
+		<div class="bottom">
+
+			<!-- 医生 -->
+			<div class="PageDoctor">
+				<a href="/doctorlogin/">
+					<img src="/static/images/doctor.png" />
+					<p class="PageDoctorP">医生</p>
+				</a>
+			</div>
+
+			<!-- 患者 -->
+			<div class="PagePatient">
+				<a href="/patientlogin/">
+					<img src="/static/images/patient.png" />
+					<p class="PagePatientP">患者</p>
+				</a>
+			</div>
+
+			<!-- 管理员 -->
+			<div class="Administrator">
+				<a href="admin/">
+					<img src="/static/images/admin.png" />
+					<p class="AdministratorP">管理员</p>
+				</a>
+			</div>
+
+		</div>
+	</body>
+</html>

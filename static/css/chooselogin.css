@@ -1,0 +1,85 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none
+}
+
+img {
+	width: 100%;
+}
+
+.PageFont {
+	width: 100%;
+	height: 80px;
+}
+
+.PageFontH1 {
+	margin-left: 43%;
+	color: #808080;
+	margin-top: 20px;
+}
+
+.bottom {
+	margin: auto;
+	width: 50%;
+	width: 1540px;
+	height: 600px;
+	background: #b0e0e6;
+}
+
+.PageDoctor {
+	height: 400px;
+	width: 400px;
+	float: left;
+	margin-top: 70px;
+	margin-left: 110px;
+}
+
+.PageDoctorP {
+	width: 400px;
+	height: 50px;
+	background: #808080;
+	text-align: center;
+	font-size: 30px;
+	color: #000000;
+	font-weight: bolder;
+}
+
+.PagePatient {
+	height: 400px;
+	width: 400px;
+	float: left;
+	margin-top: 70px;
+	margin-left: 60px;
+}
+
+.PagePatientP {
+	width: 400px;
+	height: 50px;
+	background: #808080;
+	text-align: center;
+	font-size: 30px;
+	color: #000000;
+	font-weight: bolder
+}
+
+.Administrator {
+	height: 400px;
+	width: 400px;
+	float: left;
+	margin-top: 70px;
+	margin-left: 60px;
+}
+
+.AdministratorP {
+	width: 400px;
+	height: 50px;
+	background: #808080;
+	text-align: center;
+	font-size: 30px;
+	color: #000000;
+	font-weight: bolder;
+}

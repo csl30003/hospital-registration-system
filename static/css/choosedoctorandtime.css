@@ -1,0 +1,125 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	width: 100%;
+	margin: 0 auto;
+	min-width: 1000px;
+	background-color: #efefef;
+}
+
+.top h1 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.box {
+	width: 1500px;
+	margin: 0 auto;
+	height: 940px;
+	margin-top: 20px;
+}
+
+.message {
+	margin-top: 30px;
+	margin-bottom:30px
+}
+
+img {
+	width: 130px;
+	height:130px;
+	margin-right:15px;
+	margin-left:60px;
+}
+
+
+.age {
+	display: inline-block;
+	line-height: 21px;
+	float: left;
+	margin-bottom:10px;
+    margin-left:30px;
+
+}
+
+.age dd {
+	float: left;
+}
+
+.age dt {
+	width: 220px;
+	float: right;
+}
+
+.age span {
+	font-weight: 800;
+	font-size: 18px;
+}
+
+.time {
+	float: left;
+	width: 840px;
+	height: 150px;
+	background-color: #5ef17c ;
+	border-radius: 20px;
+	margin-bottom:10px;
+	margin-left:150px;
+}
+
+.time dd {
+	float: left;
+	width: 200px;
+	height: 40px;
+	line-height: 40px;
+	background-color: #a32528;
+	margin-left: 34px;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 18px;
+	border-radius: 10px;
+	margin-top: 10px;
+}
+
+.time span {
+	width: 80px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 18px;
+	margin-left: 66px;
+}
+
+.time span a {
+	text-decoration: none;
+	color: #707070;
+}
+
+.time span img {
+	width: 20px;
+	position: relative;
+	top: 3px;
+}
+
+.time dt {
+	width: 180px;
+	float: left;
+	margin-top: 35px;
+	font-size: 17px;
+	text-align: center;
+	margin-left: 26px;
+}
+
+.time dt a {
+	text-decoration: none;
+}
+
+.gengduo {
+	font-size: 30px;
+	text-decoration: none;
+	color: #707070;
+	position: absolute;
+	bottom: -151px;
+	right: 42%;
+}
+

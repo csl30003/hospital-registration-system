@@ -1,0 +1,69 @@
+* {
+ margin: 0;
+ padding: 0;
+}
+
+body {
+ width: 100%;
+ margin: 0 auto;
+ min-width: 1000px;
+}
+
+.tap {
+ width: 100%;
+ background-color: aliceblue;
+}
+
+.content {
+ width: 100%;
+ height: 480px;
+ background-color: #8ea4f8;
+}
+.content dl{
+ display: flex;
+ justify-content: space-around;
+}
+.content .yonghu a {
+ text-decoration: none;
+ color: #FFFFFF;
+ margin-left: 5px;
+}
+
+.content .yiliao {
+ position: relative;
+ top: 50px;
+ text-align: center;
+ font-size: 36px;
+ color: #FFFFFF;
+ line-height: 36px;
+}
+
+.content dd {
+ margin-top: 120px;
+ border-radius: 5px;
+ border: white 2px solid;
+ box-shadow: rgba(0, 0, 0, 0.15) 0 6px 8px 0;
+}
+
+.content dd a {
+ display: block;
+ width: 216px;
+ height: 58px;
+ padding-top: 138px;
+ font-size: 16px;
+ color: #FFFFFF;
+ text-align: center;
+ text-decoration: none;
+ background: #05a19a url(../images/icon1.png) center 57px no-repeat;
+}
+
+.content dd:nth-child(2) a {
+ background: #ee9f5f url(../images/icon2.png) center 57px no-repeat;
+}
+
+.content dd:nth-child(3) a {
+ background: #5299db url(../images/icon3.png) center 57px no-repeat;
+}
+.content dd:nth-child(4) a {
+ background: #cc485a url(../images/icon4.png) center 57px no-repeat;
+}

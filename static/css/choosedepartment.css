@@ -1,0 +1,83 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	width: 100%;
+	margin: 0 auto;
+	min-width: 1000px;
+	background-color: #efefef;
+}
+
+.box {
+	margin: 0 auto;
+	width: 1000px;
+	height: 800px;
+}
+
+/* .tap {
+	width: 1000px;
+	height: 120px;
+	text-align: center;
+	background-color: #e3dacc;
+} */
+
+.content {
+	display: flex;
+}
+
+.content .fenlei {
+	float: left;
+	width: 220px;
+	height: 700px;
+	background-color: rgba(141, 136, 136, 0.6);
+}
+
+.content .fenlei dd {
+	width: 220px;
+	height: 78px;
+	line-height: 78px;
+	font-size: 18px;
+	padding: 0 30px;
+}
+
+/* .content img{
+	justify-content: flex-start;
+	position: relative;
+	top: 10px;
+	width: 38px;
+	height: 40px;
+} */
+.content p {
+	font-size: 28px;
+	margin-top: 10px;
+	margin-left: 15px;
+}
+
+.subject {
+	width: 900px;
+	background-color: #8ea4f8;
+}
+
+.subject dt a {
+	text-align: center;
+	float: left;
+	width: 260px;
+	height: 52px;
+	text-decoration: none;
+	color: #000000;
+	font-size: 22px;
+	margin-top: 60px;
+	line-height: 52px;
+	border-radius: 7px;
+}
+
+.subject dt a:hover {
+	background-color: antiquewhite;
+}
+
+.content dl dd,
+dt:hover {
+	cursor: pointer;
+}

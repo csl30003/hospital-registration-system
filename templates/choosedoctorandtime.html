@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>选择医生和时间</title>
+		<link rel="stylesheet" type="text/css" href="/static/css/choosedoctorandtime.css" />
+	</head>
+	<body>
+		{% load static %}
+		<div class="top">
+			<h1>预约日期:2022-5-16</h1>
+		</div>
+		<div class="box">
+			{% for doctor,number in doctor_time_number_list %}
+			<div class="message">
+				<div class="age">
+					<dl>
+						<dd>
+							<img class="doctorimg" src="/media/{{ doctor.img }}">
+						</dd>
+						<dt>
+							<span>{{ doctor.name }}</span><br>
+							{{ doctor.level }}<br>
+							{{ department_name }}<br>
+							<span>简述</span><br>
+							{{ doctor.description }}
+						</dt>
+					</dl>
+				</div>
+				<div class=" time">
+					<dl>
+						{% if number.eight == 0 %}
+							<dt>时间:08:00 名额:{{ number.eight }} <a href="#">预约</a></dt>
+						{% else %}
+							<dt>时间:08:00 名额:{{ number.eight }} <a href="/confirmregistration/{{ department_id }}/{{ doctor.id }}/08:00:00">预约</a></dt>
+						{% endif %}
+
+						{% if number.nine == 0 %}
+							<dt>时间:09:00 名额:{{ number.nine }} <a href="#">预约</a></dt>
+						{% else %}
+							<dt>时间:09:00 名额:{{ number.nine }} <a href="/confirmregistration/{{ department_id }}/{{ doctor.id }}/09:00:00">预约</a></dt>
+						{% endif %}
+
+						{% if number.ten == 0 %}
+							<dt>时间:10:00 名额:{{ number.ten }} <a href="#">预约</a></dt>
+						{% else %}
+							<dt>时间:10:00 名额:{{ number.ten }} <a href="/confirmregistration/{{ department_id }}/{{ doctor.id }}/10:00:00">预约</a></dt>
+						{% endif %}
+
+						{% if number.eleven == 0 %}
+							<dt>时间:11:00 名额:{{ number.eleven }} <a href="#">预约</a></dt>
+						{% else %}
+							<dt>时间:11:00 名额:{{ number.eleven }} <a href="/confirmregistration/{{ department_id }}/{{ doctor.id }}/11:00:00">预约</a></dt>
+						{% endif %}
+
+						{% if number.fourteen == 0 %}
+							<dt>时间:14:00 名额:{{ number.fourteen }} <a href="#">预约</a></dt>
+						{% else %}
+							<dt>时间:14:00 名额:{{ number.fourteen }} <a href="/confirmregistration/{{ department_id }}/{{ doctor.id }}/14:00:00">预约</a></dt>
+						{% endif %}
+
+						{% if number.fifteen == 0 %}
+							<dt>时间:15:00 名额:{{ number.fifteen }} <a href="#">预约</a></dt>
+						{% else %}
+							<dt>时间:15:00 名额:{{ number.fifteen }} <a href="/confirmregistration/{{ department_id }}/{{ doctor.id }}/15:00:00">预约</a></dt>
+						{% endif %}
+
+						{% if number.sixteen == 0 %}
+							<dt>时间:16:00 名额:{{ number.sixteen }} <a href="#">预约</a></dt>
+						{% else %}
+							<dt>时间:16:00 名额:{{ number.sixteen }} <a href="/confirmregistration/{{ department_id }}/{{ doctor.id }}/16:00:00">预约</a></dt>
+						{% endif %}
+
+						{% if number.seventeen == 0 %}
+							<dt>时间:17:00 名额:{{ number.seventeen }} <a href="#">预约</a></dt>
+						{% else %}
+							<dt>时间:17:00 名额:{{ number.seventeen }} <a href="/confirmregistration/{{ department_id }}/{{ doctor.id }}/17:00:00">预约</a></dt>
+						{% endif %}
+					</dl>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</body>
+</html>
