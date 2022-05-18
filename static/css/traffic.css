@@ -1,0 +1,47 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	width: 100%;
+	margin: 0 auto;
+	min-width: 1000px;
+	background-color: #efefef;
+}
+
+.box {
+	width: 700px;
+	margin: 0 auto;
+
+}
+.tap p {
+	font-size: 38px;
+	font-weight: 600;
+	text-align: center;
+	margin-top: 5%;
+}
+
+.tap a {
+	position: relative;
+	left: -25%;
+	padding: 3px 2px;
+	color: #FFFFFF;
+	font-weight: 600;
+	text-decoration: none;
+	background-color: #05A19A;
+	line-height: 41px;
+	text-align: center;
+	border: 1px solid #FFFFFF;
+	border-radius: 6px;
+}
+#luxian{
+	margin-top: 20%;
+}
+#luxian span{
+	display: block;
+	font-size: 18px;
+	font-weight: 600;
+	margin-bottom: 8%;
+}
+

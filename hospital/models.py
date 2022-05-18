@@ -36,6 +36,7 @@ class Doctor(models.Model):
     img = models.ImageField(u'医生照片', upload_to='doctorimages/')
     level = models.CharField(u'职位等级', max_length=10)
     description = models.CharField(u'详细描述', max_length=50)
+    registration_price = models.IntegerField(u'挂号价格')
     department = models.ForeignKey(Department, on_delete=models.CASCADE)
 
     def getDepartment(self):
@@ -82,6 +83,9 @@ class Register(models.Model):
     illness = models.CharField(u'病情概要', max_length=50)
     address = models.CharField(u'会诊地址', max_length=30)
     isdelete = models.BooleanField(u'挂号是否已经删除', default=False)
+    out_trade_num = models.UUIDField(u'商户订单号')
+    status = models.CharField(u'支付状态', max_length=10, default='待支付')
+    payway = models.CharField(u'支付方式', max_length=10, default='alipay')
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
     doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE)
 

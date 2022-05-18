@@ -1,0 +1,78 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	width: 100%;
+	margin: 0 auto;
+	min-width: 1000px;
+	background-color: #efefef;
+}
+
+.box {
+	width: 700px;
+	margin: 0 auto;
+
+}
+
+.tap p {
+	font-size: 38px;
+	font-weight: 600;
+	text-align: center;
+	margin-top: 5%;
+}
+
+.tap a {
+	position: relative;
+	left: -25%;
+	padding: 3px 2px;
+	color: #FFFFFF;
+	font-weight: 600;
+	text-decoration: none;
+	background-color: #05A19A;
+	line-height: 41px;
+	text-align: center;
+	border: 1px solid #FFFFFF;
+	border-radius: 6px;
+}
+
+.chaxun {
+	margin-top: 10%;
+
+}
+
+.chaxun span {
+	position: relative;
+	top: 3px;
+	font-size: 22px;
+	line-height: 29px;
+	font-weight: 600;
+}
+
+input {
+	width: 200px;
+	height: 29px;
+	margin-left: 5%;
+	border-radius: 4px;
+	border: 1px solid #FFFFFF;
+}
+
+button {
+	font-size: 16px;
+	font-weight: 600;
+	margin-left: 4%;
+	width: 50px;
+	height: 30px;
+	color: #FFFFFF;
+	border: 2px solid #FFFFFF;
+	background-color: #5299DB;
+	border-radius: 8px;
+}
+
+#tishi {
+	margin-top: 50%;
+	text-align: center;
+	font-weight: 600;
+	font-size: 28px;
+}

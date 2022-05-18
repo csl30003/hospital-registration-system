@@ -8,7 +8,7 @@
 	<body>
 		{% load static %}
 		<div class="top">
-			<h1>预约日期:2022-5-16</h1>
+			<h1>预约日期:{{ tomorrow }}</h1>
 		</div>
 		<div class="box">
 			{% for doctor,number in doctor_time_number_list %}
@@ -20,10 +20,11 @@
 						</dd>
 						<dt>
 							<span>{{ doctor.name }}</span><br>
-							{{ doctor.level }}<br>
-							{{ department_name }}<br>
+							职位等级:{{ doctor.level }}<br>
+							科室:{{ department_name }}<br>
+							挂号价格:{{ doctor.registration_price }}元<br>
 							<span>简述</span><br>
-							{{ doctor.description }}
+							{{ doctor.description }}<br>
 						</dt>
 					</dl>
 				</div>

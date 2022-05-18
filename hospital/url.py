@@ -12,4 +12,9 @@ urlpatterns=[
     path('choosedoctorandtime/<int:department_id>/',ChooseDoctorAndTimeView.as_view()),
     path('confirmregistration/<int:department_id>/<int:doctor_id>/<str:consultation_hours>/',ConfirmRegistrationView.as_view()),
     path('confirmregistration/',ConfirmRegistrationView.as_view()),
+    path('checkpay/',CheckPayView.as_view()),
+    path('patientshowregistration/',PatientShowRegistrationView.as_view()),
+
+    path('guide/',GuideView.as_view()),
+    path('traffic/',TrafficView.as_view()),
 ]

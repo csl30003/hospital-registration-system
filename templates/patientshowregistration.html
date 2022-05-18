@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+		<link rel="stylesheet" type="text/css" href="/static/css/patientshowregistration.css"/>
+	</head>
+	<body>
+		<div class="logo_box"><img class="logo_img" src="/static/images/patient.png"></div>
+		<div class="login_box">
+			<h1 class="title">预约信息</h1>
+			{% for register in register_list %}
+			<div class="div1"  >
+				<p  class="input_box" type="text" >患者姓名:  {{ register.patient_name }}</p>
+				<p  class="input_box" type="text" >医生姓名:  {{ register.doctor_name }}</p>
+				<p  class="input_box" type="text" >挂号时间:  {{ register.registration_time }}</p>
+				<p  class="input_box" type="text" >就诊时间:  {{ register.consultation_hours }}</p>
+				<p  class="input_box" type="text" >就诊地址:  {{ register.address }}</p>
+				<p  class="input_box" type="text" >病情概述:  {{ register.illness }}</p>
+				<p  class="input_box" type="text" >支付状态:  {{ register.status }}</p>
+			</div>
+			{% endfor %}
+		</div>
+	</body>
+</html>
