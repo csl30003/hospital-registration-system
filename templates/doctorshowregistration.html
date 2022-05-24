@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+		<link rel="stylesheet" type="text/css" href="/static/css/doctorshowregistration.css"/>
+	</head>
+	<body>
+		<div class="logo_box"><img class="logo_img" src="/static/images/doctor.png"></div>
+		<div class="login_box">
+			<a href="/doctorcenter/" style="margin-left: 20px;text-decoration:none;color: #008000; font-size: 20px;">返回页面</a>
+			<h1 class="title"> 我的患者</h1>
+			{% for register in register_list %}
+			<form class="form1" method="POST" action="/doctorshowregistration/">
+				{% csrf_token %}
+				<p class="input_box">患者姓名:  {{ register.patient_name }}</p>
+				<p class="input_box">医生姓名:  {{ register.doctor_name }}</p>
+				<p class="input_box">挂号时间:  {{ register.registration_time }}</p>
+				<p class="input_box">就诊时间:  {{ register.consultation_hours }}</p>
+				<p class="input_box">就诊地址:  {{ register.address }}</p>
+				<p class="input_box">病情概述:  {{ register.illness }}</p>
+				<p class="input_box">挂号状态:  {{ register.status }}</p>
+				<input class="input_box" type="text" name="register_id" value="{{ register.id }} " style = "display:none" />
+
+				<input style="margin-left: 400px; width: 100px; height: 40px;" type="submit" value="完成检查" />
+			</form>
+			{% endfor %}
+		</div>
+	</body>
+</html>

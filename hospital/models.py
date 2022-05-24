@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib import admin
 # Create your models here.
 
 from django.db import models
@@ -48,16 +48,16 @@ class Doctor(models.Model):
 
 
 class TimeNumber(models.Model):
-    eight = models.IntegerField(u'八点可预约人数')
-    nine = models.IntegerField(u'九点可预约人数')
-    ten = models.IntegerField(u'十点可预约人数')
-    eleven = models.IntegerField(u'十一点可预约人数')
-    fourteen = models.IntegerField(u'十四点可预约人数')
-    fifteen = models.IntegerField(u'十五点可预约人数')
-    sixteen = models.IntegerField(u'十六点可预约人数')
-    seventeen = models.IntegerField(u'十七点可预约人数')
+    eight = models.PositiveSmallIntegerField(u'八点可预约人数')
+    nine = models.PositiveSmallIntegerField(u'九点可预约人数')
+    ten = models.PositiveSmallIntegerField(u'十点可预约人数')
+    eleven = models.PositiveSmallIntegerField(u'十一点可预约人数')
+    fourteen = models.PositiveSmallIntegerField(u'十四点可预约人数')
+    fifteen = models.PositiveSmallIntegerField(u'十五点可预约人数')
+    sixteen = models.PositiveSmallIntegerField(u'十六点可预约人数')
+    seventeen = models.PositiveSmallIntegerField(u'十七点可预约人数')
     doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE)
-    default_number = models.IntegerField(u'默认一个时间点可预约人数')
+    default_number = models.PositiveSmallIntegerField(u'默认一个时间点可预约人数')
 
     def allNumberSetDefault(self):
         '''每天晚上0点可以调用此方法重置可预约人数'''
@@ -84,7 +84,7 @@ class Register(models.Model):
     address = models.CharField(u'会诊地址', max_length=30)
     isdelete = models.BooleanField(u'挂号是否已经删除', default=False)
     out_trade_num = models.UUIDField(u'商户订单号')
-    status = models.CharField(u'支付状态', max_length=10, default='待支付')
+    status = models.CharField(u'状态', max_length=10, default='待支付')
     payway = models.CharField(u'支付方式', max_length=10, default='alipay')
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
     doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE)

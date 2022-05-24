@@ -9,17 +9,34 @@
 	<body>
 		<div class="logo_box"><img class="logo_img" src="/static/images/patient.png"></div>
 		<div class="login_box">
+			<a href="/patientcenter/" style="margin-left: 20px;text-decoration:none;color: #008000; font-size: 20px;">返回页面</a>
 			<h1 class="title">预约信息</h1>
 			{% for register in register_list %}
-			<div class="div1"  >
-				<p  class="input_box" type="text" >患者姓名:  {{ register.patient_name }}</p>
-				<p  class="input_box" type="text" >医生姓名:  {{ register.doctor_name }}</p>
-				<p  class="input_box" type="text" >挂号时间:  {{ register.registration_time }}</p>
-				<p  class="input_box" type="text" >就诊时间:  {{ register.consultation_hours }}</p>
-				<p  class="input_box" type="text" >就诊地址:  {{ register.address }}</p>
-				<p  class="input_box" type="text" >病情概述:  {{ register.illness }}</p>
-				<p  class="input_box" type="text" >支付状态:  {{ register.status }}</p>
+			{% if register.status == '待检查' %}
+			<div class="div1">
+				<p class="input_box">患者姓名:  {{ register.patient_name }}</p>
+				<p class="input_box">医生姓名:  {{ register.doctor_name }}</p>
+				<p class="input_box">挂号时间:  {{ register.registration_time }}</p>
+				<p class="input_box">就诊时间:  {{ register.consultation_hours }}</p>
+				<p class="input_box">就诊地址:  {{ register.address }}</p>
+				<p class="input_box">病情概述:  {{ register.illness }}</p>
+				<p class="input_box">挂号状态:  {{ register.status }}</p>
 			</div>
+			{% endif %}
+			{% endfor %}
+
+			{% for register in register_list %}
+			{% if register.status == '已检查' %}
+			<div class="div2">
+				<p class="input_box">患者姓名:  {{ register.patient_name }}</p>
+				<p class="input_box">医生姓名:  {{ register.doctor_name }}</p>
+				<p class="input_box">挂号时间:  {{ register.registration_time }}</p>
+				<p class="input_box">就诊时间:  {{ register.consultation_hours }}</p>
+				<p class="input_box">就诊地址:  {{ register.address }}</p>
+				<p class="input_box">病情概述:  {{ register.illness }}</p>
+				<p class="input_box">挂号状态:  {{ register.status }}</p>
+			</div>
+			{% endif %}
 			{% endfor %}
 		</div>
 	</body>

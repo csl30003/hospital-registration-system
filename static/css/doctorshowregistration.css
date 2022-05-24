@@ -1,5 +1,5 @@
 body {
-	background-color: #8ea4f8;
+	background-color: #5ef17c;
 	background-repeat: no-repeat;
 	background-size: cover;
 
@@ -19,11 +19,11 @@ body {
 	text-align: center;
 	font-size: 28px;
 	color: #000;
-	margin-top: 80px;
+	margin-top: 40px;
 	margin-bottom: 10px;
 	letter-spacing: 3px;
 	font-family: sans-serif;
-	margin-bottom: 60px;
+	
 }
 
 .input_box {
@@ -65,18 +65,13 @@ body {
 	border-radius: 100px;
 
 }
-.div1{
+.form1{
 	border: 2px solid #808080;
 	width: 555px;
-	height: 340px;
+	height: 400px;
 	margin: 20px;
 	margin-top: 30px;
 }
-.div2{
-	border: 2px solid #DC143C;
-	width: 555px;
-	height: 340px;
-	margin: 20px;
-	margin-top: 30px;
+button:hover{
+	background-color: #008000;
 }
-

@@ -6,6 +6,7 @@ from .models import *
 import datetime
 import uuid
 from alipay import AliPay
+from django.db.models import Q
 
 
 # Create your views here.
@@ -49,7 +50,7 @@ class DoctorLoginView(View):
         if doctor_list:
             request.session['doctor'] = doctor_list[0]
 
-            return HttpResponse("进入医生界面")
+            return HttpResponseRedirect("/doctorcenter/")
 
         return HttpResponse("登录有问题")
 
@@ -220,14 +221,12 @@ class CheckPayView(View):
         if alipay.verify(params, sign):
             out_trade_no = params.get('out_trade_no', '')
             register = Register.objects.get(out_trade_num=out_trade_no)
-            register.status = '已支付'
+            register.status = '待检查'
             register.isdelete = 0
             register.save()
 
             doctor_time_number = TimeNumber.objects.get(doctor_id=register.doctor_id)
             consultation_hours_time = str(register.consultation_hours)[11:]
-            print('--------------------------------------------------')
-            print(consultation_hours_time)
             if consultation_hours_time == '08:00:00':
                 doctor_time_number.eight -= 1
             elif consultation_hours_time == '09:00:00':
@@ -261,7 +260,8 @@ class PatientShowRegistrationView(View):
 
     def get(self, request):
         patient = request.session.get('patient')
-        register_list = patient.register_set.order_by('consultation_hours').filter(isdelete=False, status='已支付').all()
+        register_list = patient.register_set.order_by('consultation_hours').filter(
+            Q(isdelete=False, status='待检查') | Q(isdelete=False, status='已检查')).all()
 
         return render(request, 'patientshowregistration.html', {'register_list': register_list})
 
@@ -274,3 +274,39 @@ class GuideView(View):
 class TrafficView(View):
     def get(self, request):
         return render(request, 'traffic.html')
+
+
+class DoctorCenterView(View):
+    '''医生界面'''
+
+    def get(self, request):
+        doctor = request.session.get('doctor', '')
+
+        return render(request, 'doctorcenter.html', {'doctor_name': doctor.name})
+
+
+class DoctorShowRegistrationView(View):
+    '''医生展示挂号信息'''
+
+    def get(self, request):
+        doctor = request.session.get('doctor')
+        try:
+            register_list = doctor.register_set.order_by('consultation_hours').filter(isdelete=0, status='待检查').all()
+        except:
+            register_list = []
+
+        return render(request, 'doctorshowregistration.html', {'register_list': register_list})
+
+    def post(self, request):
+        register_id = request.POST.get('register_id', '')
+        register = Register.objects.get(id=register_id)
+        register.status = '已检查'
+        register.save()
+
+        doctor = request.session.get('doctor')
+        try:
+            register_list = doctor.register_set.order_by('consultation_hours').filter(isdelete=0, status='待检查').all()
+        except:
+            register_list = []
+
+        return render(request, 'doctorshowregistration.html', {'register_list': register_list})
